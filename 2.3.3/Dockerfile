@@ -15,7 +15,8 @@ ENV RUBY_DOWNLOAD_SHA256 241408c8c555b258846368830a06146e4849a1d58dcaf6b14a3b6a7
 ENV RUBYGEMS_VERSION 2.6.4
 
 # install build dependencies
-RUN yum -y install autoconf gcc make pax-utils wget readline-devel
+RUN yum -y install autoconf gcc make pax-utils wget readline-devel && \
+    yum clean all
 
 # LibreSSL Dynamic Library
 RUN wget http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.1.6.tar.gz && \
